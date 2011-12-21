@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-NSKBaan2012::Application.config.secret_token = '27bd0d35c60d8282d458fc2ed017e5b8f6d70c2e89af84c52214a6fcec05b33a2ebab3f8473a598755c5ef0dc4b1fc5bb4e1a01850887ec9e354887a32d320bc'
+NSKBaan2012::Application.config.secret_token = 'a46881c4cab58a652381ef700c9e8d7aa4a861be2b02fcc63d6f5be910990659779737a615b2ba60741031c929bac03d81890fac336ec489ab6b0ab4927e0398'

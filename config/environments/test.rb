@@ -7,11 +7,7 @@ NSKBaan2012::Application.configure do
   # and recreated between test runs.  Don't rely on the data there!
   config.cache_classes = true
 
-  # Configure static asset server for tests with Cache-Control for performance
-  config.serve_static_assets = true
-  config.static_cache_control = "public, max-age=3600"
-
-  # Log error messages when you accidentally call methods on nil
+  # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
 
   # Show full error reports and disable caching
@@ -37,3 +33,7 @@ NSKBaan2012::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 end
+Refinery.rescue_not_found = false
+# When true will use Amazon's Simple Storage Service on your production machine
+# instead of the default file system for resources and images
+Refinery.s3_backend = !(ENV['S3_KEY'].nil? || ENV['S3_SECRET'].nil?)
