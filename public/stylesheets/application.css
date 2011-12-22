@@ -8,6 +8,18 @@ header {
 	background: #DDD;
 }
 
+header nav {
+	margin-top: 10px;
+}
+
+header h1 {
+	font-family: Helvetica;
+	display: inline;
+	position: relative;
+	left: 50px;
+	top: -80px;
+}
+
 body {
   background: #DDD;
   font-family: Verdana;
@@ -20,6 +32,7 @@ body {
 }
 
 #banners {
+	display: inline;
 
 }
 
