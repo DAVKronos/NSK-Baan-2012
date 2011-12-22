@@ -127,6 +127,8 @@ GEM
       globalize3 (~> 0.1)
       refinerycms-core (= 1.0.9)
       seo_meta (~> 1.1)
+    refinerycms-portfolio (0.9.10)
+      refinerycms (>= 0.9.9)
     refinerycms-resources (1.0.9)
       activerecord (~> 3.0.10)
       dragonfly (~> 0.9.0)
@@ -156,4 +158,5 @@ PLATFORMS
 DEPENDENCIES
   refinerycms (~> 1.0.9)
   refinerycms-i18n (~> 1.0.0)
+  refinerycms-portfolio (~> 0.9.9)
   sqlite3

@@ -19,6 +19,14 @@ body {
 	margin-top: 1em;
 }
 
+#banners {
+
+}
+
+#banners {
+	float: right;
+}
+
 #body_content, #side_body_content {
   	float: left;
 	width: 100%;
@@ -35,6 +43,10 @@ body {
   padding: 0px;
   padding-bottom: 15px;
   
+}
+
+#menu ul ul {
+	position: absolute;
 }
 
 #menu ul li#item_0 a {
