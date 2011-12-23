@@ -5,7 +5,7 @@
 @import url('refinery/application.css');
 
 header {
-	background: #DDD;
+	/* background: #DDD; */
 }
 
 header nav {
@@ -21,7 +21,7 @@ header h1 {
 }
 
 body {
-  background: #DDD;
+  background: none repeat scroll 0 0 #EEEEEE;
   font-family: Verdana;
   font-size: 13px;
   line-height: 18px;
@@ -29,6 +29,13 @@ body {
 
 #page {
 	margin-top: 1em;
+	
+}
+
+section#body_content {
+	border: 1px solid #DEDEDE;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 #banners {
@@ -42,10 +49,11 @@ body {
 
 #body_content, #side_body_content {
   	float: left;
-	width: 100%;
   	background: white;
   	color: #333;
   	padding: 20px;
+	width: 100%;
+
 }
 
 
@@ -62,9 +70,15 @@ body {
 	position: absolute;
 }
 
-#menu ul li#item_0 a {
+#menu ul li.first a {
 	border-top-left-radius: 5px 5px;
 	border-bottom-left-radius: 5px 5px;
+
+}
+
+#menu ul li.last a {
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
 
 }
 
@@ -78,12 +92,29 @@ body {
   display: block;
   padding: 5px 20px;
   text-decoration: none;
-  height: 20px;
-  background: #A3A2A2;
+  color: white;
+  font-size: 12pt;
+ background-image: linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
+background-image: -o-linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
+background-image: -moz-linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
+background-image: -webkit-linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
+background-image: -ms-linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, #8BC53F),
+	color-stop(0.51, #82B33E),
+	color-stop(0.3, #8BC53F)
+);
+
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 #menu ul li.selected a, #menu ul li a:hover {
-  background: #8BC53F;
+  background: #47631f;
 }
 
 #menu ul li ul li a {
