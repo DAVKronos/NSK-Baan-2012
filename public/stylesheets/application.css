@@ -94,7 +94,8 @@ section#body_content {
   text-decoration: none;
   color: white;
   font-size: 12pt;
- background-image: linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
+background-image: url(/images/gradient.png); 
+background-image: linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
 background-image: -o-linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
 background-image: -moz-linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
 background-image: -webkit-linear-gradient(bottom, #8BC53F 0%, #82B33E 51%, #8BC53F 30%);
@@ -115,6 +116,10 @@ background-image: -webkit-gradient(
 
 #menu ul li.selected a, #menu ul li a:hover {
   background: #47631f;
+}
+
+#menu ul li ul li a{
+	background: #618A28;
 }
 
 #menu ul li ul li a {
