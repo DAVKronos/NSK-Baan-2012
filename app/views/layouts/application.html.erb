@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <%= render :partial => "/shared/html_tag" %>
-  <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
-  <%= render :partial => "/shared/head" %>
-  <body>
-    <%= site_bar -%>
-    <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
-    <div id="page_container">
-      <header>
-        <%= render :partial => "/shared/header" -%>
-      </header>
-      <section id='page'>
+<% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
+<%= render :partial => "/shared/head" %>
+<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+<%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+<%= stylesheet_link_tag 'custom', :media => 'screen' %>
+
+<body>
+  <%= site_bar -%>
+  <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+  <header>
+    <%= render :partial => "/shared/header" -%>
+  </header>
+  <div id="container" class="clearfix">
+    <div class='span-24 last'>
+      <div class='span-18 append-1' id='body_container'>
         <%= yield %>
-      </section>
-	  <section id='banners'>
-		<%= link_to image_tag('RunninCenterLogo.png'), "http://www.runenschede.nl/"%>
-	  </section>
-      <footer>
-        <%= render :partial => "/shared/footer" -%>
-      </footer>
+      </div>
+	  <div class='span-5 last'>
+        <%= link_to image_tag('RunninCenterLogo.png'), "http://www.runenschede.nl/"%>
+      </div>
     </div>
+  </div>
+  <footer>
+    <%= render :partial => "/shared/footer" -%>
+  </footer>
     <%= render :partial => "/shared/javascripts" %>
-  </body>
+</body>
 </html>
