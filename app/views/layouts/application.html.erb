@@ -15,12 +15,16 @@
   </header>
   <div class="container" class="clearfix">
     <div class='span-24 last'>
-      <div class='span-18 append-1' id='body_container'>
+      <div class='span-17 append-1' id='body_container'>
         <%= yield %>
       </div>
-	  <div class='span-5 last'>
-        <%= link_to image_tag('RunninCenterLogo.png'), "http://www.runenschede.nl/"%>
-      </div>
+	  <div class='span-5 last' id='banners'>
+		<h6>Onze sponsoren</h6>
+		<%= link_to image_tag('sauconylogo.jpg', :class => "banner"), "http://www.saucony.nl",
+			:target => "_blank"%>
+        <%= link_to image_tag('RunninCenterLogo.png', :class => "banner"), "http://www.runenschede.nl/", 
+			:target => "_blank"%>
+	  </div>
     </div>
   </div>
   <footer>
