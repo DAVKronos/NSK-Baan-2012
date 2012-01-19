@@ -5,14 +5,15 @@
 <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
 <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
 <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+<%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'%>
 
 <body>
   <%= site_bar -%>
   <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
-  <header>
+  <header class="clearfix container">
     <%= render :partial => "/shared/header" -%>
   </header>
-  <div id="container" class="clearfix">
+  <div class="container" class="clearfix">
     <div class='span-24 last'>
       <div class='span-18 append-1' id='body_container'>
         <%= yield %>

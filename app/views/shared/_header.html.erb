@@ -1,7 +1,8 @@
-
-<%= link_to image_tag("NSKBaanLogoCompleetTransparant300.png"), root_path %>
+<div class="span-24">
+<%= link_to image_tag("NSKBaanLogo100.png"), root_path, :class => 'span-5 append-1' %>
 
 <%= render(:partial => "/shared/menu", :locals => {
              :dom_id => 'menu',
-             :css => 'menu'
+             :css => 'menu span-18'
            }) %>
+</div>
