@@ -11,6 +11,10 @@ header nav {
 	margin-top: 10px;
 }
 
+header a.append-1 {
+	padding-right: 10px;
+}
+
 header h1 {
 	font-family: Helvetica;
 	display: inline;
@@ -97,7 +101,7 @@ section#body_content {
 
 #menu ul li a {
   display: block;
-  padding: 5px 20px;
+  padding: 5px 10px;
   text-decoration: none;
   color: white;
   font-size: 12pt;
