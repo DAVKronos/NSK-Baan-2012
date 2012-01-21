@@ -3,8 +3,6 @@
   Formatting applies to all frontend.
 */
 
-@import url('refinery/application.css');
-
 .menu li.selected > a {
   font-weight: normal;
 }

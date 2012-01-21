@@ -1,4 +1,6 @@
 NSKBaan2012::Application.routes.draw do
+  get "twitter_search/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

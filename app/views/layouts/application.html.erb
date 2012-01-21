@@ -2,10 +2,6 @@
 <%= render :partial => "/shared/html_tag" %>
 <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
 <%= render :partial => "/shared/head" %>
-<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-<%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
-<%= stylesheet_link_tag 'custom', :media => 'screen' %>
-<%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'%>
 
 <body>
   <%= site_bar -%>
@@ -17,6 +13,8 @@
     <div class='span-24 last'>
       <div class='span-17 append-1' id='body_container'>
         <%= yield %>
+		<div class='span-17 append-1' id='twitter-bar'>Bezig met laden van twitter berichten
+		</div>
       </div>
 	  <div class='span-5 last' id='banners'>
 		<h6>Onze sponsoren</h6>
