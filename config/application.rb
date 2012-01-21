@@ -39,6 +39,8 @@ module NSKBaan2012
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     
+    config.cache_store = :memory_store
+    
     config.to_prepare do
       ::PagesController.module_eval do
         caches_page :show, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
