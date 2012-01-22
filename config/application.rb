@@ -43,8 +43,8 @@ module NSKBaan2012
     
     config.to_prepare do
       ::PagesController.module_eval do
-        caches_action :show
-        caches_action :home
+        caches_action :show, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
+        caches_action :home, :unless => proc {|c| c.user_signed_in? || c.flash.any? }
       end
       
       Admin::PagesController.module_eval do
