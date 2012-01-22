@@ -9,10 +9,14 @@ class PageSweeper < ActionController::Caching::Sweeper
   def after_destroy(page)
     expire_cache_for(page)
   end
+  
+  def after_update(page)
+    expire_cache_for(page)
+  end
  
   private
   def expire_cache_for(page)
     # Expire the index page now that we added a new product
-    expire_page(:controller => 'pages', :action => 'show')
+    expire_fragment(%r{/.*/})
   end
 end

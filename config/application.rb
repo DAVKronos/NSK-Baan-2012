@@ -43,10 +43,14 @@ module NSKBaan2012
     
     config.to_prepare do
       ::PagesController.module_eval do
-        caches_action :show, :expires_in => 1.minute
-        caches_action :home, :expires_in => 1.minute
+        caches_action :show
+        caches_action :home
+      end
+      
+      Admin::PagesController.module_eval do
         cache_sweeper :page_sweeper
       end
     end
   end
 end
+
