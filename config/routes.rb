@@ -1,5 +1,7 @@
 NSKBaan2012::Application.routes.draw do
   get "twitter_search/show"
+  
+  match "application.manifest" => Rails::Offline
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
