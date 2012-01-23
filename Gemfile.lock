@@ -50,10 +50,16 @@ GEM
       rack (~> 1.1)
     friendly_id_globalize3 (3.2.1.5)
       babosa (~> 0.3.0)
+    git (1.2.5)
     globalize3 (0.1.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
     i18n (0.5.0)
+    jeweler (1.7.0)
+      bundler (~> 1.0)
+      git (>= 1.2.5)
+      rake
+      rdoc
     json (1.6.3)
     mail (2.2.19)
       activesupport (>= 2.3.6)
@@ -147,6 +153,10 @@ GEM
     refinerycms-settings (1.0.9)
       activerecord (~> 3.0.10)
       refinerycms-base (= 1.0.9)
+    rjson (0.1.4)
+      jeweler
+      rails (> 3.0.0, < 3.2.0)
+      rjson
     routing-filter (0.2.4)
       actionpack
     seo_meta (1.1.1)
@@ -177,5 +187,6 @@ DEPENDENCIES
   refinerycms-i18n (~> 1.0.0)
   refinerycms-news (~> 1.2)
   refinerycms-portfolio (~> 0.9.9)
+  rjson (~> 0.1.4)
   sqlite3
   twitter (~> 2.0.2)

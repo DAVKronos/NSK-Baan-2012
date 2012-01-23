@@ -63,6 +63,7 @@ gem 'refinerycms-portfolio', '~> 0.9.9'
 gem "refinerycms-news", '~> 1.2'
 gem "twitter", "~> 2.0.2"
 gem "rack-offline", "~> 0.6.2"
+gem "rjson", "~> 0.1.4"
 
 
 # Specify additional Refinery CMS Engines here (all optional):
