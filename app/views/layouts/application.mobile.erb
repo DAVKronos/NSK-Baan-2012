@@ -1,14 +1,6 @@
 <!DOCTYPE html>
-<%= render :partial => "/shared/html_tag" %>
-<% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
-<%= render :partial => "/shared/head" %>
-
+<html>
+	<%= render :partial => "/shared/head" %>
 <body>
-  <p><%= link_to "Full site", :mobile => 0 %></p>
-  <%= site_bar -%>
-  <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
-        <%= yield %>
-  </footer>
-    <%= render :partial => "/shared/javascripts" %>
 </body>
 </html>
