@@ -4,23 +4,22 @@ Ext.setup({
     icon: 'icon.png',
     glossOnIcon: false,
     onReady: function() {
-	
-		Ext.regModel('Page', {
-		    fields: ['content']
-		});
-		
-		//The Store contains the AjaxProxy as an inline configuration
-		var store = new Ext.data.Store({
-		    proxy: {
-				model: 'Page',
-		        type: 'ajax',
-		        url : '?format=json'
-		    }
-		});
 
-		store.load(function(records, operation, success) {
-		    Ext.getCmp('page_content').update("haha");
-		});
+	
+		var fullVersion =	function() {
+			var redirect = '?mobile=0'
+			window.location = redirect;
+		} 
+	
+	
+            Ext.getBody().mask('Loading...', 'x-mask-loading', false);
+            Ext.Ajax.request({
+                url: '?format=json',
+                success: function(response, opts) {
+                    Ext.getCmp('page_content').update(response.responseText);
+                    Ext.getBody().unmask();
+                }
+            });
 
 		var panel = new Ext.Panel({
     		fullscreen: true,
@@ -30,7 +29,7 @@ Ext.setup({
         	{
             	dock : 'top',
             	xtype: 'toolbar',
-            	title: 'Standard Titlebar'
+            	title: 'NSK Baan 2012'
         	},
         	{
             	dock : 'top',
@@ -38,7 +37,9 @@ Ext.setup({
             	ui   : 'light',
             	items: [
                 	{
-                    	text: 'Test Button'
+						ui: 'back',
+                    	text: 'Back',
+						handler: fullVersion
                 	}
             		]
         	}

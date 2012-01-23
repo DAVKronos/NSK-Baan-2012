@@ -7,18 +7,7 @@
   <p><%= link_to "Full site", :mobile => 0 %></p>
   <%= site_bar -%>
   <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
-  <header class="clearfix container">
-    <%= render :partial => "/shared/header" -%>
-  </header>
-  <div class="container" class="clearfix">
-    <div class='span-24 last'>
-      <div class='span-17 append-1' id='body_container'>
         <%= yield %>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <%= render :partial => "/shared/footer" -%>
   </footer>
     <%= render :partial => "/shared/javascripts" %>
 </body>
