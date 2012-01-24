@@ -10,17 +10,33 @@ Ext.setup({
 			var redirect = '?mobile=0'
 			window.location = redirect;
 		} 
+		
+		Ext.regModel('Page', {
+			fields: [{name: 'url', type: 'string'},
+					 {name: 'title', type: 'string'}]
+		});
+		
+		var store = new Ext.data.TreeStore({
+			model: 'Page',
+			proxy: {
+				type: 'ajax',
+				url : '?format=json',
+				reader: {
+					type: 'tree',
+					root: 'pages'
+				}
+			}
+		});
+		
+		var nestedList = new Ext.NestedList({
+		    fullscreen: true,
+		    title: 'NSK Baan 2012',
+		    displayField: 'title',
+		    store: store
+		});
 	
 	
-            Ext.getBody().mask('Loading...', 'x-mask-loading', false);
-            Ext.Ajax.request({
-                url: '?format=json',
-                success: function(response, opts) {
-                    Ext.getCmp('page_content').update(response.responseText);
-                    Ext.getBody().unmask();
-                }
-            });
-
+ /*          
 		var panel = new Ext.Panel({
     		fullscreen: true,
 			id   : 'page_content', 
@@ -45,5 +61,6 @@ Ext.setup({
         	}
     			]
 	});
+*/
     }
 });
