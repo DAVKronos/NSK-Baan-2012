@@ -5,5 +5,7 @@
                    :apply_css => local_assigns[:apply_css],
                    :hide_children => !!hide_children,
  				   :sibling_count => (children.length - 1)} -%>]
+<% else -%>
+,"leaf":true
 <% end -%>}
 <%= "," unless menu_branch_counter == sibling_count %>
