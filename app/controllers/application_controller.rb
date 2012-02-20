@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :mobile_device?
   protect_from_forgery
   before_filter :prepare_for_mobile
+  layout :set_layout
   
     def mobile_device?
       if session[:mobile_param]
@@ -17,5 +18,13 @@ class ApplicationController < ActionController::Base
     def prepare_for_mobile
       session[:mobile_param] = params[:mobile] if params[:mobile]
       request.format = :mobile if mobile_device? && request.format == :html
+    end
+    
+    def set_layout
+      if request.headers['X-PJAX']
+        false
+      else
+        "application"
+      end
     end
 end

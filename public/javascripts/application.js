@@ -1,4 +1,8 @@
 $(document).ready(function () {
+	$('a').pjax('#main',{timeout: 5000})
+	$('#main')
+	  .bind('pjax:start', function() { $('#loading').show() })
+	  .bind('pjax:end',   function() { $('#loading').hide() })
 	$.getJSON("/twitter_search/show", function(json){
 		var twitterindex = 0;
 		function changetwitter(){

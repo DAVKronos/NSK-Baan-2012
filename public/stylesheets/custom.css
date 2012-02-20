@@ -16,7 +16,7 @@ header {
 
 div#twitter-bar {
 	margin: 15px 0 0;
-	background-color: grey;
+	background-color: #848484;
 	color: white;
 	border-radius: 5px 5px 5px 5px;
 	padding-top: 5px;
@@ -131,6 +131,12 @@ section#body_content {
   float: left;
   margin-right: 1px;
   
+}
+
+#loading {
+	position: absolute;
+	top: 5px;
+	left: 5px;
 }
 
 #menu ul li a {
