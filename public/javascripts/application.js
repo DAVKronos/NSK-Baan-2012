@@ -2,10 +2,10 @@ $(document).ready(function () {
 	$.getJSON("/twitter_search/show", function(json){
 		var twitterindex = 0;
 		function changetwitter(){
-			$('#twitter-bar').fadeOut('slow', function() {
+			$('#twitter-text').fadeOut('slow', function() {
 		    $("#twitter-text").html('@'+json[twitterindex].from_user+ ' ' + replaceURLWithHTMLLinks(json[twitterindex].text));
-			$('#twitter-bar').fadeIn('slow');
-			if (twitterindex == 4){
+			$('#twitter-text').fadeIn('slow');
+			if (twitterindex == json.length -1){
 				twitterindex = 0;
 				}
 			else
@@ -15,23 +15,34 @@ $(document).ready(function () {
 		  });
 		};
 		changetwitter();
-	var tinterval =	setInterval(changetwitter, 10000);
+		setTwinterval();
+		var tinterval;
+		function setTwinterval(){
+			if(json.length > 1){
+				tinterval =	setInterval(changetwitter, 5000);
+				setTwitHover();
+			}
+		}
+		
+		function setTwitHover(){
+			$("#twitter-bar").hover(
+			  function () {
+			    clearInterval(tinterval);
+				tinterval = 0;
+			  },
+			  function () {
+			    setTwinterval();
+			  }
+			);
+		}
+	
+
 	});
 	
 	function replaceURLWithHTMLLinks(text) {
 	    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 	    return text.replace(exp,"<a href='$1'>$1</a>"); 
 	}
-	
-	$("#twitter-bar").hover(
-	  function () {
-	    clearInterval(tinterval);
-		t = 0;
-	  },
-	  function () {
-	    tinterval =	setInterval(changetwitter, 10000);
-	  }
-	);
 })
 
 // On window load. This waits until images have loaded which is essential
