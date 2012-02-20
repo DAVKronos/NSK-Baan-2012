@@ -7,7 +7,7 @@ $(document).ready(function () {
 		var twitterindex = 0;
 		function changetwitter(){
 			$('#twitter-text').fadeOut('slow', function() {
-		    $("#twitter-text").html('@'+json[twitterindex].from_user+ ' ' + replaceURLWithHTMLLinks(json[twitterindex].text));
+		    $("#twitter-text").html('@'+json[twitterindex].user.name+ ' ' + replaceURLWithHTMLLinks(json[twitterindex].text));
 			$('#twitter-text').fadeIn('slow');
 			if (twitterindex == json.length -1){
 				twitterindex = 0;
