@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$('a').pjax('#main',{timeout: 5000})
+	$('a').pjax('#main')
 	$('#main')
 	  .bind('pjax:start', function() { $('#loading').show() })
 	  .bind('pjax:end',   function() { $('#loading').hide() })
