@@ -23,7 +23,7 @@ $(document).ready(function () {
 		var tinterval;
 		function setTwinterval(){
 			if(json.length > 1){
-				tinterval =	setInterval(changetwitter, 5000);
+				tinterval =	setInterval(changetwitter, 10000);
 				setTwitHover();
 			}
 		}
