@@ -2,7 +2,7 @@ $(document).ready(function () {
 	$('a').pjax('#main')
 	$('#main')
 	  .bind('pjax:start', function() { $('#loading').show() })
-	  .bind('pjax:end',   function() { $('#loading').hide() })
+	  .bind('pjax:end',   function() { $('#loading').hide(); $("img.banner").show(); })
 	$.getJSON("/twitter_search/show", function(json){
 		var twitterindex = 0;
 		function changetwitter(){
