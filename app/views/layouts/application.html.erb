@@ -7,8 +7,9 @@
   <p><%= link_to "Mobile Site", :mobile => 1 unless true %></p>
   <%= site_bar -%>
   <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+  <div id="main">
   <header class="clearfix container">
-    <div id="main">
+    
     <%= render :partial => "/shared/header" -%>
   </header>
   <div class="container" class="clearfix">
