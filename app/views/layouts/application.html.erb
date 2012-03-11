@@ -8,18 +8,15 @@
   <%= site_bar -%>
   <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
   <header class="clearfix container">
+    <div id="main">
     <%= render :partial => "/shared/header" -%>
   </header>
   <div class="container" class="clearfix">
     <div class='span-24 last'>
       <div class='span-17 append-1' id='body_container'>
         <div id='loading' style='display:none'><img src='/images/spin.gif'></div>
-        <div id="main">
           <%= yield %>
-        </div>
-		<div class='span-17 append-1' id='twitter-bar'>
-		  <div class ='span-2'><img src="/images/twitter_newbird_white.png" /></div><div class="span-12" id="twitter-text">Bezig met laden van twitter berichten</div>
-		</div>
+	
       </div>
 	  <div class='span-5 last' id='banners'>
 		<h6>Onze sponsoren</h6>
@@ -27,6 +24,8 @@
 			:target => "_blank"%>
         <%= link_to image_tag('RunninCenterLogo.png', :class => "banner"), "http://www.runenschede.nl/", 
 			:target => "_blank"%>
+			<%= link_to image_tag('trimm.png', :class => "banner"), "http://www.trimm.nl/", 
+		:target => "_blank"%>
 		<%= link_to image_tag('SR logo.png', :class => "banner"), "http://www.sportraadut.nl/", 
 			:target => "_blank"%>
 		<%= link_to image_tag('ZeuS logo.png', :class => "banner"), "http://www.studentenatletiek.nl/", 
@@ -38,9 +37,12 @@
 	  </div>
     </div>
   </div>
+</div>
   <footer>
+    	<div class='span-24 last' id='twitter-bar'>
+  		  <div class ='span-2'><img src="/images/twitter_newbird_white.png" /></div><div class="span-18" id="twitter-text">Bezig met laden van twitter berichten</div>
+  		</div>
     <%= render :partial => "/shared/footer" -%>
   </footer>
-    <%= render :partial => "/shared/javascripts" %>
 </body>
 </html>

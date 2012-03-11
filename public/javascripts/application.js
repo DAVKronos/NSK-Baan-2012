@@ -53,7 +53,7 @@ $(document).ready(function () {
 $(window).load(function(){
 	
 	// Fade in images so there isn't a color "pop" document load and then on window load
-	$("img.banner").fadeIn(500);
+	$("img.banner").fadeIn(3000);
 	
 	// clone image
 	$('img.banner').each(function(){
@@ -68,10 +68,10 @@ $(window).load(function(){
 	
 	// Fade image 
 	$('img.banner').mouseover(function(){
-		$(this).parent().find('img:first').stop().animate({opacity:1}, 1000);
+		$(this).parent().find('img:first').stop().animate({opacity:1}, 500);
 	})
 	$('.img_grayscale').mouseout(function(){
-		$(this).stop().animate({opacity:0}, 1000);
+		$(this).stop().animate({opacity:0}, 500);
 	});		
 });
 
