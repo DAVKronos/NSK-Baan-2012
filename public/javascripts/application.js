@@ -1,8 +1,9 @@
 $(document).ready(function () {
+	logoGreyscale();
 	$('a').pjax('#main')
 	$('#main')
 	  .bind('pjax:start', function() { $('#loading').show() })
-	  .bind('pjax:end',   function() { $('#loading').hide(); $("img.banner").show(); })
+	  .bind('pjax:end',   function() { $('#loading').hide(); logoGreyscale();})
 	$.getJSON("/twitter_search/show", function(json){
 		var twitterindex = 0;
 		function changetwitter(){
@@ -49,8 +50,7 @@ $(document).ready(function () {
 	}
 })
 
-// On window load. This waits until images have loaded which is essential
-$(window).load(function(){
+function logoGreyscale(){
 	
 	// Fade in images so there isn't a color "pop" document load and then on window load
 	$("img.banner").fadeIn(3000);
@@ -73,7 +73,7 @@ $(window).load(function(){
 	$('.img_grayscale').mouseout(function(){
 		$(this).stop().animate({opacity:0}, 500);
 	});		
-});
+};
 
 // Grayscale w canvas method
 function grayscale(src){
@@ -96,4 +96,4 @@ function grayscale(src){
 	}
 	ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
 	return canvas.toDataURL();
-}
+};
